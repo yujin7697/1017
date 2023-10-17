@@ -281,6 +281,8 @@ public class UserController {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String nickname = SecurityContextHolder.getContext().getAuthentication().getName(); // 사용자의 닉네임을 가져옴
 
+		System.out.println("nickname: " + nickname);
+
 		// UserRepository를 사용하여 사용자 정보 가져오기
 		User user = userRepository.findByEmail(nickname);
 

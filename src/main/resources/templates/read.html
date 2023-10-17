@@ -360,7 +360,7 @@
 
       <div class="reply-header">
         <div>
-          <img src="/images/하모하모기본프사.png" />
+          <img th:src="${#authentication.principal.profile}" />
         </div>
 
         <div>
@@ -398,7 +398,7 @@
 
    /*<![CDATA[*/
           var bno = [[${board.number}]];
-          let nickname = "[[${#httpServletRequest.remoteUser}]]";
+          let nickname = "[[${#authentication.principal.nickname}]]";
    /*]]>*/
 
 

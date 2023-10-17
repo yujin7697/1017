@@ -20,6 +20,7 @@ public class Board {
     private Long number; // 또는 다른 타입을 사용할 수 있음
     private String nickname;
     private String contents;
+    private String profile; //프로필 사진 저장
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") // 유동적으로 바뀌게
     private LocalDateTime date;

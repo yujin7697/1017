@@ -1,14 +1,17 @@
 package com.example.demo.restcontroller;
 
+import com.example.demo.config.auth.PrincipalDetails;
 import com.example.demo.domain.dto.ReplyDto;
 import com.example.demo.domain.service.BoardService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -23,7 +26,8 @@ public class BoardRestController {
     //댓글추가
     //-------------------
     @GetMapping("/reply/add")
-    public void addReply(Long bno, String content , String nickname){
+    public void addReply(Long bno, String content , String nickname) {
+
         log.info("GET /reply/add " + bno + " " + content + " " + nickname);
         boardService.addReply(bno,content, nickname);
     }

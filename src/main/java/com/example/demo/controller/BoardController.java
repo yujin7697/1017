@@ -50,16 +50,16 @@ public class BoardController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = authentication.getName();
 
-
-
         // UserRepository를 사용하여 사용자 정보 가져오기
         User user = userRepository.findById(email).get();
+
 
         // UserDto 객체 생성
         UserDto dto = UserDto.EntityToDto(user);
         // 사용자 정보에서 닉네임을 가져와서 설정
         if (user != null) {
             dto.setNickname(user.getNickname());
+            dto.setProfile(user.getProfile());
         }
 
         model.addAttribute("dto", dto);

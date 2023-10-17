@@ -12,6 +12,7 @@ public class BoardDto {
     private Long number;
     private String nickname;
     private String contents;
+    private String profile;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime date;
@@ -24,9 +25,11 @@ public class BoardDto {
         dto.number = board.getNumber();
         dto.nickname=board.getNickname();
         dto.contents = board.getContents();
+        dto.profile = board.getProfile();
         dto.date = board.getDate();
         dto.hits = board.getHits();
         dto.like_count  = board.getLike_count();
         return dto;
     }
+
 }
